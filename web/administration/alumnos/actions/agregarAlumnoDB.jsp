@@ -109,15 +109,24 @@
                       <sql:param value="${param.municipio}"/>
                       <sql:param value="${param.direccion}"/>
                       <sql:param value="${param.cnt}"/>
-                  </sql:update>         
-                  
+                  </sql:update>
               </c:catch>
               <c:redirect url="../index.jsp"/>
-
           </c:when>
           <c:otherwise>
               <p>Error</p>
           </c:otherwise>
       </c:choose>
+</c:if>
+<c:if test="${param.op==3}">
+    <c:catch var="exception3">
+        <sql:update var="updateEstado" dataSource="jdbc/cra">
+            UPDATE alumno
+            SET estado = 0
+            WHERE carnet = ?
+            <sql:param value="${param.cnt}"/>
+        </sql:update>
+    </c:catch>
+    <c:redirect url="../index.jsp"/>
 </c:if>
 

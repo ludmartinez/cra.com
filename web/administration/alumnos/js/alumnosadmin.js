@@ -5,9 +5,9 @@ function indicadorAgregar() {
     document.getElementById("btnsubmit").classList.remove("btn-warning");
     document.getElementById("opIndicator").value = 1;
     document.getElementById("cntcont").classList.add("d-none");
-    resetear();    
+    resetear();
 }
-function resetear(){
+function resetear() {
     //Reiniciando valores
     document.getElementById("cnt").value = "";
     document.getElementById("nie").value = "";
@@ -42,9 +42,19 @@ function indicadorEditar(carnet, nie, n1, n2, n3, ap, am, s, fn, ln, dp, mn, di)
     document.getElementById("apellidomaterno").value = am;
     document.getElementById("slcSexo").value = s;
     document.getElementById("dtNacimiento").value = fn;
-    document.getElementById("lugarNac").value = ln;        
+    document.getElementById("lugarNac").value = ln;
     document.getElementById("slcDepartamento").value = dp;
     document.getElementById("txtdireccion").value = di;
     document.getElementById("munsel").value = mn;
     municipiosLoad();
+}
+function indicadorBanear(carnet, nombre1, apellidoP) {
+    document.getElementById("opIndicator").value = 3;
+    //asignando valores
+    document.getElementById("cnt").value = carnet;
+    document.getElementById("labelAlumno").innerHTML = nombre1 +" "+ apellidoP;
+}
+
+function banearAlumno(){
+    document.getElementById("formAlumno").submit();
 }

@@ -5,14 +5,44 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>CRA</title>
-    </head>
-    <body>
-        <h1>Administración</h1>
-        <a href="alumnos/index.jsp">Alumnos</a>
-    </body>
-</html>
+
+<%@include file="/WEB-INF/jspf/header.jspf" %>
+
+<section class="container py-4">
+    <div class="row">
+        <a href="alumnos/" class="btn btn-block btn-success col-12 col-md my-2 mr-2">
+            <h3>Alumnos</h3>
+            <br>
+            <i class="fas fa-user-graduate" style="font-size: 10em"></i>
+        </a>
+        <a href="#" class="btn btn-block btn-success col-12 col-md my-2 mr-2">
+            <h3>Profesores</h3>
+            <br>
+            <i class="fas fa-chalkboard-teacher" style="font-size: 10em"></i>
+        </a>
+        <a href="#" class="btn btn-block btn-success col-12 col-md my-2 mr-2">
+            <h3>Materias</h3>
+            <br>
+            <i class="fas fa-book" style="font-size: 10em"></i>
+        </a>
+        <div class="w-100"></div>
+        <a href="#" class="btn btn-block btn-success col-12 col-md my-2 mr-2">
+            <h3>Grados</h3>
+            <br>
+            <i class="fas fa-list-ol" style="font-size: 10em"></i>
+        </a>
+        <a href="#" class="btn btn-block btn-success col-12 col-md my-2 mr-2">
+            <h3>Direcciones</h3>
+            <br>
+            <i class="fas fa-map" style="font-size: 10em"></i>
+        </a>
+        <a href="#" class="btn btn-block btn-success col-12 col-md my-2 mr-2">
+            <h3>Usuarios</h3>
+            <br>
+            <i class="fas fa-user" style="font-size: 10em"></i>
+        </a>
+    </div>
+</section>
+
+<%@include file="/WEB-INF/jspf/footer.jspf" %>
+
