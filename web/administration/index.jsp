@@ -15,12 +15,12 @@
             <br>
             <i class="fas fa-user-graduate" style="font-size: 10em"></i>
         </a>
-        <a href="#" class="btn btn-block btn-success col-12 col-md my-2 mr-2">
+        <a href="profesores/" class="btn btn-block btn-success col-12 col-md my-2 mr-2">
             <h3>Profesores</h3>
             <br>
             <i class="fas fa-chalkboard-teacher" style="font-size: 10em"></i>
         </a>
-        <a href="#" class="btn btn-block btn-success col-12 col-md my-2 mr-2">
+        <a href="materias/" class="btn btn-block btn-success col-12 col-md my-2 mr-2">
             <h3>Materias</h3>
             <br>
             <i class="fas fa-book" style="font-size: 10em"></i>
