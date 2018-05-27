@@ -1,3 +1,5 @@
+
+
 function indicadorAgregar() {
     document.getElementById("modalMtoAlumno").innerHTML = "Agregar Alumno";
     document.getElementById("btnsubmit").innerHTML = "Agregar";
@@ -52,9 +54,10 @@ function indicadorBanear(carnet, nombre1, apellidoP) {
     document.getElementById("opIndicator").value = 3;
     //asignando valores
     document.getElementById("cnt").value = carnet;
-    document.getElementById("labelAlumno").innerHTML = nombre1 +" "+ apellidoP;
+    document.getElementById("labelAlumno").innerHTML = nombre1 + " " + apellidoP;
 }
 
-function banearAlumno(){
+function banearAlumno() {
     document.getElementById("formAlumno").submit();
 }
+

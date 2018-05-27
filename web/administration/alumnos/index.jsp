@@ -16,7 +16,7 @@
         d.cod_direccion, d.id_departamento, d.id_municipio, d.direccion
         FROM alumno AS a
         INNER JOIN direccion AS d
-        ON a.carnet = d.carnet
+        ON a.carnet = d.carnet_alumno
         WHERE a.estado = 1
     </sql:query>
     <sql:query var="listadoDepartamentos">
@@ -193,7 +193,7 @@
                     <div class="form-group col-12 col-md">
                         <input type="hidden" name="munsel" id="munsel">
                         <label for="slcMunicipio">Municipio:</label>
-                        <select class="form-control" name="municipio" id="slcMunicipio" onchange="ciudadesLoad()"  required>
+                        <select class="form-control" name="municipio" id="slcMunicipio"  required>
                             <option value="" selected="selected">--Seleccione una opción--</option>
                         </select>
                     </div>
@@ -210,7 +210,7 @@
                 </form>
             </div>
         </div>
-    </div>| 
+    </div> 
 </section>
 
 <!-- Modal Advertencia eliminar -->
@@ -256,7 +256,7 @@
 
     function municipiosLoad() {
         $("#cmbIndicator").val("1");
-        $.post("actions/comboList.jsp", $("#formAlumno").serialize(), function (data) {
+        $.post("../actions/comboList.jsp", $("#formAlumno").serialize(), function (data) {
             $("#slcMunicipio").html(data);
         });
     }

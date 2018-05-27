@@ -1,82 +1,82 @@
 <%-- any content can be specified here e.g.: --%>
 <%@ page pageEncoding="UTF-8" %>
-    <!--Footer-->
-    <section id="footer" class="container-fluid bg-dark pt-3 pb-3 text-light">
-        <article class="row">
-            <div class="col-12 col-md">
-                <ul class="nav flex-column border-right">
-                    <li class="nav-item active">
-                        <a class="nav-link text-light" href="#">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Misión y Visión</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Nuestra Historia</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Valores</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-12 col-md">
-                <ul class="nav flex-column border-right">
-                    <li class="nav-item active">
-                        <a class="nav-link text-light" href="#nosotros">Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#mision-vision">Misión y Visión</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#nuestra-historia">Nuestra Historia</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Valores</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-12 col-md">
-                <ul class="nav flex-column border-right">
-                    <li class="nav-item active">
-                        <a class="nav-link text-light" href="#">Información</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Misión y Visión</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Nuestra Historia</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Valores</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="nav felx-column col-12 col-lg">
-                <div class="row pl-3">
-                    <div class="nav-item col order-2 order-lg-1">
-                        <strong>Contáctanos:</strong><br>
-                        <small><i class="fas fa-phone"></i> +(503)2504-9671</small><br>
-                        <small><i class="fas fa-map-marker-alt"></i> Residencial La Santísima Trinidad, Pje. 13, Pol. 14, #12, Block "E", Ayutuxtepeque, San Salvador, El Salvador</small><br>
-                        <small><i class="fas fa-envelope"></i> mail.cra@cra.edu.sv</small>
-                    </div>
-                    <div class="col-12 col-sm-3 col-lg-4 order-1">
-                        <img src="${pageContext.servletContext.contextPath}/img/CRAlogo.png" class="img-fluid">
-                    </div>
+<!--Footer-->
+<section id="footer" class="container-fluid bg-dark pt-3 pb-3 text-light">
+    <article class="row">
+        <div class="col-12 col-md">
+            <ul class="nav flex-column border-right">
+                <li class="nav-item active">
+                    <a class="nav-link text-light" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">Misión y Visión</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">Nuestra Historia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">Valores</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-12 col-md">
+            <ul class="nav flex-column border-right">
+                <li class="nav-item active">
+                    <a class="nav-link text-light" href="#nosotros">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#mision-vision">Misión y Visión</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#nuestra-historia">Nuestra Historia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">Valores</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-12 col-md">
+            <ul class="nav flex-column border-right">
+                <li class="nav-item active">
+                    <a class="nav-link text-light" href="#">Información</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">Misión y Visión</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">Nuestra Historia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">Valores</a>
+                </li>
+            </ul>
+        </div>
+        <div class="nav felx-column col-12 col-lg">
+            <div class="row pl-3">
+                <div class="nav-item col order-2 order-lg-1">
+                    <strong>Contáctanos:</strong><br>
+                    <small><i class="fas fa-phone"></i> +(503)2504-9671</small><br>
+                    <small><i class="fas fa-map-marker-alt"></i> Residencial La Santísima Trinidad, Pje. 13, Pol. 14, #12, Block "E", Ayutuxtepeque, San Salvador, El Salvador</small><br>
+                    <small><i class="fas fa-envelope"></i> mail.cra@cra.edu.sv</small>
+                </div>
+                <div class="col-12 col-sm-3 col-lg-4 order-1">
+                    <img src="${pageContext.servletContext.contextPath}/img/CRAlogo.png" class="img-fluid">
                 </div>
             </div>
-        </article>
-    </section>
-    <!--Copyright-->
-    <section class="bg-secondary container-fluid text-white">
-        <p class="mb-0 text-center">
-            <small>Copyright <i class="far fa-copyright"></i> 2018. Todos los derechos reservados</small>
-        </p>
-        <p class="mb-0 text-center">
-            Colegio Rosa Agazzi 2018
-        </p>
-    </section>
-    
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        </div>
+    </article>
+</section>
+<!--Copyright-->
+<section class="bg-secondary container-fluid text-white">
+    <p class="mb-0 text-center">
+        <small>Copyright <i class="far fa-copyright"></i> 2018. Todos los derechos reservados</small>
+    </p>
+    <p class="mb-0 text-center">
+        Colegio Rosa Agazzi 2018
+    </p>
+</section>
+
+<script src="${pageContext.servletContext.contextPath}/js/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>

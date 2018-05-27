@@ -70,7 +70,7 @@
                       </sql:update>
                       <sql:update var="addDireccion">
                           INSERT INTO direccion(
-                          carnet, id_departamento, id_municipio, direccion)
+                          carnet_alumno, id_departamento, id_municipio, direccion)
                           VALUES(?,?,?,?)
                           <sql:param value="${carnet}"/>
                           <sql:param value="${param.departamento}"/>
@@ -104,7 +104,7 @@
                   <sql:update var="updateDireccion" dataSource="jdbc/cra">
                       UPDATE direccion
                       SET id_departamento = ?, id_municipio = ?, direccion = ?
-                      WHERE carnet = ?
+                      WHERE carnet_alumno = ?
                       <sql:param value="${param.departamento}"/>
                       <sql:param value="${param.municipio}"/>
                       <sql:param value="${param.direccion}"/>
