@@ -21,7 +21,6 @@
 hs_err_pid*
 
 # Directories #
-bin/
 target/
 tmp/
 node_modules/
@@ -33,11 +32,6 @@ jaxws/jaxws-endpoint/src/main/webapp/WEB-INF/wsdl/
  
 *.class
  
-# Package Files #
-*.war
-*.ear
-*.db
-rebel.xml
 
 ######################
 # Windows
@@ -66,44 +60,7 @@ Desktop.ini
 ######################
 # NetBeans
 ######################
-nbproject/
-nbbuild/
-dist/
-nbdist/
-nbactions.xml
-nb-configuration.xml
- 
-######################
-# IDEA
-######################
-*.iml
-*.ipr
-*.iws
-.idea/
-atlassian-ide-plugin.xml
-
- 
-######################
-# Eclipse
-######################
- 
-*.pydevproject
-.project
-.metadata
-*.tmp
-*.bak
-*.swp
-*~.nib
-local.properties
-.classpath
-.settings/
-.loadpath
-
-# External tool builders
-.externalToolBuilders/
- 
-# Locally stored "Eclipse launch configurations"
-*.launch
+nbproject/private/
  
 # CDT-specific
 .cproject
