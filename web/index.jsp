@@ -126,7 +126,6 @@
                             <h2>Visión <span class="fas fa-eye"></span></h2>
                             <p class="text-justify pb-2">
                                 Brindar una eduación integral de calidad, con la finalidad de asegurar el desarrollo de habilidades, destrezas y aptitudes con el fundamento cristiano, de hombres y mujeres con liderazgo, excelencia académica y principios espirituales.
-
                             </p>
                         </div>
                     </div>
