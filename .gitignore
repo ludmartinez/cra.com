@@ -11,7 +11,6 @@
 .mtj.tmp/
 
 # Package Files #
-*.jar
 *.war
 *.ear
 *.zip
@@ -22,10 +21,8 @@
 hs_err_pid*
 
 # Directories #
-build/
 bin/
 target/
-libs/
 tmp/
 node_modules/
 jaxws/jaxws-client/src/main/
@@ -37,7 +34,6 @@ jaxws/jaxws-endpoint/src/main/webapp/WEB-INF/wsdl/
 *.class
  
 # Package Files #
-*.jar
 *.war
 *.ear
 *.db
@@ -71,7 +67,6 @@ Desktop.ini
 # NetBeans
 ######################
 nbproject/
-build/
 nbbuild/
 dist/
 nbdist/

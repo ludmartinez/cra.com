@@ -1,0 +1,39 @@
+.carousel-item img{
+    max-height: 550px;
+}
+
+h1 span{
+    background-color: #1390FF;
+    width: 50%;
+    height: 4px;
+    position: relative;
+    display: block;
+    left: 25%;
+    bottom: -0.183em;
+    margin-bottom: 0.78em;
+}
+
+.pt-6, .py-6{
+    padding-top: 4.2rem !important;
+}
+
+.pb-6, .py-6{
+    padding-bottom: 4.2rem !important;
+}
+
+#footer li.active{
+    background: #1390ff
+}
+
+.w-5 {
+  width: 5% !important;
+}
+.w-10 {
+  width: 10% !important;
+}
+.w-15 {
+  width: 15% !important;
+}
+.w-20 {
+  width: 20% !important;
+}

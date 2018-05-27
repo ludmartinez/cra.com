@@ -1,0 +1,40 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page pageEncoding="UTF-8" %>
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <title>CRA | Inicio</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="/cra.com/css/app.css">
+        <script defer src="${pageContext.servletContext.contextPath}/js/fontawesome-all.js"></script>
+    </head>
+
+    <body>
+        <!-- Barra de Navegación-->
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top" id="navegacion">
+            <a class="navbar-brand w-20" href="${pageContext.servletContext.contextPath}/administration/">
+                <img src="${pageContext.servletContext.contextPath}/img/CRAlogo.png" class="d-none d-md-inline w-15  mr-auto">
+                Colegio Rosa Agazzi
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#NavbarContent" aria-controls="NavbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="NavbarContent">
+                <div class="btn-group ml-auto">
+                    <button type="button" class="btn btn-secondary">Usuario Usuario</button>
+                    <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>                       
+                    <div class="dropdown-menu" style="left: -15px">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Cerrar Sesión</a>
+                    </div>
+                </div>        
+            </div>
+        </nav>
