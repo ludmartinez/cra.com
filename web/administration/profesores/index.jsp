@@ -6,8 +6,6 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<%@include file="../../WEB-INF/jspf/header.jspf" %>
-=======
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -259,5 +257,4 @@
     }
 </script>
 
->>>>>>> ecfa0b19515e5679f156346fa3f9d29694b282ef
 <%@include file="../../WEB-INF/jspf/footer.jspf" %>

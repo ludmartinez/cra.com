@@ -12,7 +12,7 @@
     <meta charset="utf-8" />
     <title>CRA | Inicio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/app.css">
     <script defer src="js/fontawesome-all.js"></script>
 </head>
@@ -37,7 +37,7 @@
         </ul>
 
         <!--Slider-->
-        <div class="row justify-content-center">
+        <div id="inicio" class="row justify-content-center">
             <div id="Slider" class="carousel slide col px-0" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#Slider" data-slide-to="0" class="active"></li>
@@ -47,16 +47,16 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="d-block w-100" src="http://lorempicsum.com/futurama/800/400/2" alt="First slide">
+                        <img class="d-block w-100" src="img/estudiantes.jpg" alt="First slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="http://lorempicsum.com/futurama/800/400/1" alt="First slide">
+                        <img class="d-block w-100" src="img/becas-estudiantes-hispanos.jpg" alt="First slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="http://lorempicsum.com/futurama/800/400/3" alt="First slide">
+                        <img class="d-block w-100" src="img/corefonet-estudiantes.jpg" alt="First slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="http://lorempicsum.com/futurama/800/400/4" alt="First slide">
+                        <img class="d-block w-100" src="img/japon-abre-convocatoria-y-ofrece-becas-estudiantes-peruanos-764x480-463644.jpg" alt="First slide">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#Slider" role="button" data-slide="prev">
@@ -97,8 +97,6 @@
         </div>
     </nav>
 
-    <section id="inicio" class="bg-success container-fluid pt-6" style="height: 500px"></section>
-
     <!--Sección Nosotros-->
     <section id="nosotros" class="container-fluid px-0 pt-6">
         <h1 class="text-center">Nosotros<span></span></h1>
@@ -136,7 +134,7 @@
         <article class="container" id="nuestra-historia">
             <h2>Nuestra historia</h2>
             <p class="text-justify">
-                <img src="http://lorempicsum.com/futurama/400/200/2" class="col-sm-7 pl-0 float-left col-lg-4"> Why yes, yes of course! Because this hoverboard incident has now occurred, Griff goes to jail. Therefore your son won't go with him tonight and that robbery will never take place. Thus history, future history, has now been altered and this is the proof! Marty, we've succeeded, not exactly as I'd planned but no matter. Let's go get Jennifer and go home! (Marty puts the hoverboard in the DeLorean and says hi to Einstein again.) Hi Einie, hi buddy! (He picks up the almanac in its bag, but the book falls out and lands at Doc's feet.) What's this? Uh, it's a souvenir...
+                <img src="img/corefonet-estudiantes.jpg" class="col-sm-7 pl-0 float-left col-lg-4"> Why yes, yes of course! Because this hoverboard incident has now occurred, Griff goes to jail. Therefore your son won't go with him tonight and that robbery will never take place. Thus history, future history, has now been altered and this is the proof! Marty, we've succeeded, not exactly as I'd planned but no matter. Let's go get Jennifer and go home! (Marty puts the hoverboard in the DeLorean and says hi to Einstein again.) Hi Einie, hi buddy! (He picks up the almanac in its bag, but the book falls out and lands at Doc's feet.) What's this? Uh, it's a souvenir...
             </p>
             <p class="text-justify">
                 Why yes, yes of course! Because this hoverboard incident has now occurred, Griff goes to jail. Therefore your son won't go with him tonight and that robbery will never take place. Thus history, future history, has now been altered and this is the proof! Marty, we've succeeded, not exactly as I'd planned but no matter. Let's go get Jennifer and go home! (Marty puts the hoverboard in the DeLorean and says hi to Einstein again.) Hi Einie, hi buddy! (He picks up the almanac in its bag, but the book falls out and lands at Doc's feet.) What's this? Uh, it's a souvenir... Oh-ho. Clara was one in a million. One in a billion. One in a googolplex. The woman of my dreams and I lost her for all time. I can assure you, sir, there are other women. I have peddled this barbed wire all across the country, and it has taught me one thing for certain. It's that you never know what the future might bring. Oh-ho...the future, I can tell you about the future. (Railroad Tracks - Morning) (Marty is just waking up, lifting his head from the barrel of his gun which he slept on top of the entire night.)
@@ -175,7 +173,7 @@
         </article>
     </section>
 
-    <!--Alumnos-->
+    <!--LogIN-->
     <section id="alumnos" class="container-fluid pt-6 pb-3" style="background: url(img/Backgrounds/background1.png); background-repeat: no-repeat; background-size: cover">
         <h1 class="text-center">LogIn<span></span></h1>
 
@@ -184,7 +182,7 @@
                 Inicio de Sesión
             </div>
             <div class="card-body">
-                <form action="administration\index.jsp">
+                <form name="frmLogIn" id="frmLogIn" method="post" action="login/authentication.jsp">
                     <div class="form-group">
                         <label for="UserInput">Usuario</label>
                         <div class="input-group">
@@ -193,7 +191,7 @@
                                     <span class="fas fa-user"></span>
                                 </div>
                             </div>
-                            <input type="text" class="form-control" id="UserInput" placeholder="Carnet institucional">
+                            <input name="user" type="text" class="form-control" id="UserInput" placeholder="Nombre de usuario">
                         </div>
                     </div>
                     <div class="form-group">
@@ -204,14 +202,14 @@
                                     <span class="fas fa-key"></span>
                                 </div>
                             </div>
-                            <input type="password" class="form-control" id="InputPass" placeholder="Contraseña">
+                            <input name="pass" type="password" class="form-control" id="InputPass" placeholder="Contraseña">
                         </div>
                     </div>
                     <div class="form-group form-check text-center">
                         <input type="checkbox" class="form-check-input" id="CheckRecordar">
                         <label class="form-check-labe" for="CheckRecordar">Recordarme</label>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">Ingresar</button>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Acceder</button>
                 </form>
             </div>
         </div>
@@ -293,8 +291,9 @@
         </p>
     </section>
     
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.bundle.js"></script>
+    <script src="${pageContext.servletContext.contextPath}/js/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>
