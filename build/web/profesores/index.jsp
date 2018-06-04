@@ -5,10 +5,11 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@include file="../WEB-INF/jspf/header.jspf" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<c:set var="target" value="profesores/"/>
+<%@include file="../WEB-INF/jspf/header.jspf" %>
 <sql:query var="asignacionprof" dataSource="jdbc/cra">
     SELECT DISTINCTROW m.nombre, m.cod_materia 
     FROM profesorgradomateria AS pgm

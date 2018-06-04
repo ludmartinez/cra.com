@@ -1,5 +1,4 @@
 
-
 function indicadorAgregar() {
     document.getElementById("modalMtoProfesor").innerHTML = "Agregar Profesor";
     document.getElementById("btnsubmit").innerHTML = "Agregar";
@@ -7,6 +6,8 @@ function indicadorAgregar() {
     document.getElementById("btnsubmit").classList.remove("btn-warning");
     document.getElementById("opIndicator").value = 1;
     document.getElementById("cntcont").classList.add("d-none");
+    document.getElementById("ProfTabNav").classList.add("d-none");
+    document.getElementById("informacion-tab").click();
     resetear();
 }
 function resetear() {
@@ -25,6 +26,7 @@ function resetear() {
     document.getElementById("slcMunicipio").value = "";
     document.getElementById("txtdireccion").value = "";
     document.getElementById("munsel").value = "";
+    document.getElementById("inpProfesores").value = "";
     municipiosLoad();
 }
 function indicadorEditar(carnet, dui, nit, n1, n2, n3, ap, am, s, fn, dp, mn, di) {
@@ -34,6 +36,8 @@ function indicadorEditar(carnet, dui, nit, n1, n2, n3, ap, am, s, fn, dp, mn, di
     document.getElementById("btnsubmit").classList.add("btn-warning");
     document.getElementById("opIndicator").value = 2;
     document.getElementById("cntcont").classList.remove("d-none");
+    document.getElementById("ProfTabNav").classList.remove("d-none");
+    document.getElementById("informacion-tab").click();
     //asignando valores
     document.getElementById("cnt").value = carnet;
     document.getElementById("dui").value = dui;
@@ -48,7 +52,11 @@ function indicadorEditar(carnet, dui, nit, n1, n2, n3, ap, am, s, fn, dp, mn, di
     document.getElementById("slcDepartamento").value = dp;
     document.getElementById("txtdireccion").value = di;
     document.getElementById("munsel").value = mn;
+    document.getElementById("slcMateria").value = "";
+    document.getElementById("inpProfesores").value = carnet;    
     municipiosLoad();
+    gradosLoad();
+    listadosAsignacionesLoad();
 }
 function indicadorBanear(carnet, nombre1, apellidoP) {
     document.getElementById("opIndicator").value = 3;
@@ -60,4 +68,3 @@ function indicadorBanear(carnet, nombre1, apellidoP) {
 function banearAlumno() {
     document.getElementById("formProfesor").submit();
 }
-

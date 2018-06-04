@@ -15,7 +15,7 @@
     <body>
         <!-- Barra de Navegación-->
         <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top" id="navegacion">
-            <a class="navbar-brand w-20" href="${pageContext.servletContext.contextPath}/administration/">
+            <a class="navbar-brand w-20" href="/cra.com/${target}">
                 <img src="${pageContext.servletContext.contextPath}/img/CRAlogo.png" class="d-none d-md-inline w-15  mr-auto">
                 Colegio Rosa Agazzi
             </a>
@@ -23,17 +23,13 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="NavbarContent">
-                <div class="btn-group ml-auto">
-                    <button type="button" class="btn btn-secondary">${applicationScope.cnt}</button>
-                    <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="sr-only">Toggle Dropdown</span>
-                    </button>                       
-                    <div class="dropdown-menu" style="left: -15px">
+                <div class="navbar-nav dropdown">
+                    <a class="btn btn-success dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <c:out value="${sessionScope.nombre}"/>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="${pageContext.servletContext.contextPath}" onclick="${sessionScope.cnt = null}">Cerrar Sesión</a>
+                        <a class="dropdown-item" href="${pageContext.servletContext.contextPath}/login/logout.jsp">Cerrar sesión</a>
                     </div>
                 </div>        
             </div>

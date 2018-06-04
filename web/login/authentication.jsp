@@ -21,7 +21,7 @@
 </sql:query>
 
 <c:choose>
-    <c:when test="${veruser.rowCount > 0}">
+    <c:when test="${veruser.rowCount == 1}">
         <c:if test="${veruser.rows[0].carnet_profesor != null}">
             <sql:query var="profesordata" dataSource="jdbc/cra">
                 SELECT nombre1, apellidoPaterno
@@ -29,8 +29,8 @@
                 WHERE carnet = ?
                 <sql:param value="${veruser.rows[0].carnet_profesor}"/>
             </sql:query>
-            <c:set var="id_user" scope="session" value="${veruser.rows[0].carnet_profesor}"/>
-            <c:set var="cnt" scope="application" value="${profesordata.rows[0].nombre1} ${profesordata.rows[0].apellidoPaterno}"/>
+            <c:set var="id_user" value="${veruser.rows[0].carnet_profesor}" scope="session" />
+            <c:set var="nombre" value="${profesordata.rows[0].nombre1} ${profesordata.rows[0].apellidoPaterno}" scope="session" />
             <c:redirect url="../profesores/"/>
         </c:if>
         <c:if test="${veruser.rows[0].carnet_alumno != null}">
@@ -40,12 +40,12 @@
                 WHERE carnet = ?
                 <sql:param value="${veruser.rows[0].carnet_alumno}"/>
             </sql:query>
-                <c:set var="id_user" scope="session" value="${veruser.rows[0].carnet_alumno}"/>
-            <c:set var="cnt" scope="session" value="${alumnodata.rows[0].nombre1} ${alumndata.rows[0].apellidoPaterno}"/>
+            <c:set var="id_user" scope="session" value="${veruser.rows[0].carnet_alumno}"/>
+            <c:set var="nombre" scope="session" value="${alumnodata.rows[0].nombre1} ${alumndata.rows[0].apellidoPaterno}"/>
             <c:redirect url="../alumnos/"/>
         </c:if>
         <c:if test="${veruser.rows[0].carnet_profesor == null && veruser.rows[0].carnet_alumno == null}">
-            <c:set var="cnt" scope="session" value="${param.user}"/>
+            <c:set var="nombre" value="${param.user}" scope="session" />
             <c:redirect url="../administration/"/>
         </c:if>
     </c:when>

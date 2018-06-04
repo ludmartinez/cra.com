@@ -10,7 +10,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
-<c:if test="${param.dui != null && param.nombre1 != '' && 
+<c:if test="${param.dui != '' && param.nombre1 != '' && 
               param.apellidoP != '' && param.apellidoM != ''
               && param.s != '' && param.fechaNac !='' && 
               param.departamento != '' && param.municipio !='' && 
@@ -77,6 +77,13 @@
                           <sql:param value="${param.departamento}"/>
                           <sql:param value="${param.municipio}"/>
                           <sql:param value="${param.direccion}"/>
+                      </sql:update>
+                      <sql:update var="addUser">
+                          INSERT INTO usuario(
+                          nombreUsuario, password, carnet_profesor)
+                          VALUES(?,123,?)
+                          <sql:param value="${carnet}"/>
+                          <sql:param value="${carnet}"/>
                       </sql:update>
                   </sql:transaction>                
                   <c:redirect url="../index.jsp"/>

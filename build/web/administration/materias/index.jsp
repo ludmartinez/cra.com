@@ -13,6 +13,8 @@
     FROM materia
     WHERE estado = 1
 </sql:query>
+
+<c:set var="target" value="administration"/>
 <%@include file="../../WEB-INF/jspf/header.jspf" %>
 <script src="js/materiasadmin.js"></script>
 <c:set var="cantador" value="0"/>
@@ -46,8 +48,8 @@
                                     <td><c:out value="${materia.cod_materia}"/></td>
                                     <td><c:out value="${materia.nombre}"/></td>
                                     <td>
-                                        <a class="btn btn-sm btn-warning" onclick="editar('${materia.cod_materia}','${materia.nombre}')" data-toggle="modal" data-target="#modalMto"><i class="fas fa-edit"></i></a>
-                                        <a class="btn btn-sm btn-danger" onclick="indicadorBanear('${materia.cod_materia}','${materia.nombre}')" data-toggle="modal" data-target="#modalEliminar"><i class="fas fa-trash"></i></a>
+                                        <a class="btn btn-sm btn-warning" onclick="editar('${materia.cod_materia}', '${materia.nombre}')" data-toggle="modal" data-target="#modalMto"><i class="fas fa-edit"></i></a>
+                                        <a class="btn btn-sm btn-danger" onclick="indicadorBanear('${materia.cod_materia}', '${materia.nombre}')" data-toggle="modal" data-target="#modalEliminar"><i class="fas fa-trash"></i></a>
                                     </td>
                                 </tr>
                             </c:forEach>

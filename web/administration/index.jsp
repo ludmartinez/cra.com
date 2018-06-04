@@ -6,8 +6,9 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@include file="/WEB-INF/jspf/header.jspf" %>
 
+<c:set var="target" value="administration"/>
+<%@include file="/WEB-INF/jspf/header.jspf" %>
 <section class="container py-4">
     <div class="row">
         <a href="alumnos/" class="btn btn-block btn-success col-12 col-md my-2 mr-2">

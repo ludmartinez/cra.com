@@ -23,8 +23,14 @@
         SELECT *
         FROM departamento
     </sql:query>
+    <sql:query var="listadoMaterias">
+        SELECT *
+        FROM materia
+        WHERE estado = 1
+    </sql:query>
 </sql:transaction>
 
+<c:set var="target" value="administration"/>
 <%@include file="../../WEB-INF/jspf/header.jspf" %>
 <script src="js/profesoresadmin.js"></script>
 
@@ -76,7 +82,7 @@
                 </c:when> 
                 <c:otherwise>
                     <p class="alert alert-info" role="alert">
-                        No hay ningún alumno registrado
+                        No hay ningún profesor registrado
                     </p>
                 </c:otherwise>
             </c:choose>
@@ -95,114 +101,180 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form class="row needs-validation" name="formProfesor" id="formProfesor" method="post" action="actions/agregarProfesorDB.jsp" novalidate>
-                    <input type="hidden" id="opIndicator" class="d-none" name="op" value="1"/>
-                    <input type="hidden" id="cmbIndicator" class="d-none" name="cmb"/>
-                    <div class="form-group col-12 col-md-6 d-none" id="cntcont">
-                        <label for="cnt">Carnet</label>
-                        <input type="text" name="cnt" class="form-control" id="cnt" readonly>
-                    </div>
-                    <div class="w-100"></div>
-                    <div class="form-group col-12 col-md-6">
-                        <label for="nie">DUI:</label>
-                        <input type="number" name="dui" class="form-control" id="dui" placeholder="123..." value="" required>
-                        <div class="invalid-feedback">
-                            Ingrese el número de DUI
-                        </div>
-                    </div> 
-                    <div class="form-group col-12 col-md-6">
-                        <label for="nie">NIT:</label>
-                        <input type="number" name="nit" class="form-control" id="nit" placeholder="123..." value="" required>
-                        <div class="invalid-feedback">
-                            Ingrese el número de NIT
-                        </div>
-                    </div> 
-                    <div class="w-100"></div>
-                    <div class="form-group col-12 col-lg">
-                        <label for="nombre1">Primer nombre:</label>
-                        <input type="text" class="form-control" name="nombre1" id="nombre1" placeholder="Alguien..." required>
-                        <div class="invalid-feedback">
-                            Ingrese un nombre válido
-                        </div>
-                    </div>
-                    <div class="form-group col-12 col-lg">
-                        <label for="nombre2">Segundo nombre:</label>
-                        <input type="text" class="form-control" name="nombre2" id="nombre2" placeholder="Alguien...">
-                        <div class="invalid-feedback">
-                            Ingrese un nombre válido
-                        </div>
-                    </div>
-                    <div class="form-group col-12 col-lg">
-                        <label for="nombre3">Tercer nombre:</label>
-                        <input type="text" class="form-control" name="nombre3" id="nombre3" placeholder="Alguien...">
-                        <div class="invalid-feedback">
-                            Ingrese un nombre válido
-                        </div>
-                    </div>                                    
+                <ul class="nav nav-tabs" id="ProfTabNav" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="informacion-tab" data-toggle="tab" href="#informacion" role="tab" aria-controls="home" aria-selected="true">Información</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="asignaciones-tab" data-toggle="tab" href="#asignaciones" role="tab" aria-controls="profile" aria-selected="false">Asignaciones</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="ProfTabContent">
+                    <div class="tab-pane fade show active" id="informacion" role="tabpanel" aria-labelledby="home-tab">
+                        <form class="row needs-validation pt-3" name="formProfesor" id="formProfesor" method="post" action="actions/agregarProfesorDB.jsp" novalidate>
+                            <input type="hidden" id="opIndicator" class="d-none" name="op" value="1"/>
+                            <input type="hidden" id="cmbIndicator" class="d-none" name="cmb"/>
+                            <div class="form-group col-12 col-md-6 d-none" id="cntcont">
+                                <label for="cnt">Carnet</label>
+                                <input type="text" name="cnt" class="form-control" id="cnt" readonly>
+                            </div>
 
-                    <div class="col-12 col-md-12">
-                        <div class="row">
+                            <div class="w-100"></div>
                             <div class="form-group col-12 col-md-6">
-                                <label for="apellidopaterno">Apellido paterno:</label>
-                                <input type="text" class="form-control" name="apellidoP" id="apellidopaterno" placeholder="Alguien..." required>
+                                <label for="nie">DUI:</label>
+                                <input type="number" name="dui" class="form-control" id="dui" placeholder="123..." value="" required>
                                 <div class="invalid-feedback">
-                                    Ingrese un apellido válido
+                                    Ingrese el número de DUI
+                                </div>
+                            </div> 
+                            <div class="form-group col-12 col-md-6">
+                                <label for="nie">NIT:</label>
+                                <input type="number" name="nit" class="form-control" id="nit" placeholder="123..." value="" required>
+                                <div class="invalid-feedback">
+                                    Ingrese el número de NIT
+                                </div>
+                            </div> 
+                            <div class="w-100"></div>
+                            <div class="form-group col-12 col-lg">
+                                <label for="nombre1">Primer nombre:</label>
+                                <input type="text" class="form-control" name="nombre1" id="nombre1" placeholder="Alguien..." required>
+                                <div class="invalid-feedback">
+                                    Ingrese un nombre válido
                                 </div>
                             </div>
+                            <div class="form-group col-12 col-lg">
+                                <label for="nombre2">Segundo nombre:</label>
+                                <input type="text" class="form-control" name="nombre2" id="nombre2" placeholder="Alguien...">
+                                <div class="invalid-feedback">
+                                    Ingrese un nombre válido
+                                </div>
+                            </div>
+                            <div class="form-group col-12 col-lg">
+                                <label for="nombre3">Tercer nombre:</label>
+                                <input type="text" class="form-control" name="nombre3" id="nombre3" placeholder="Alguien...">
+                                <div class="invalid-feedback">
+                                    Ingrese un nombre válido
+                                </div>
+                            </div>                                    
+
+                            <div class="col-12 col-md-12">
+                                <div class="row">
+                                    <div class="form-group col-12 col-md-6">
+                                        <label for="apellidopaterno">Apellido paterno:</label>
+                                        <input type="text" class="form-control" name="apellidoP" id="apellidopaterno" placeholder="Alguien..." required>
+                                        <div class="invalid-feedback">
+                                            Ingrese un apellido válido
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-12 col-md">
+                                        <label for="apellidomaterno">Apellido materno:</label>
+                                        <input type="text" class="form-control" name="apellidoM" id="apellidomaterno" placeholder="Alguien..." required>
+                                        <div class="invalid-feedback">
+                                            Ingrese un apellido válido
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                            <div class="w-100"></div>
+                            <div class="form-group col-12 col-md-4 col-lg-4">
+                                <label for="slcSexo">Sexo:</label>
+                                <select class="form-control" name="s" id="slcSexo">
+                                    <option value="M">Masculino</option>
+                                    <option value="F">Femenino</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-12 col-md-8 col-lg-8">
+                                <label for="dtNacimiento">Fecha de nacimiento:</label>
+                                <input type="date" class="form-control" name="fechaNac" id="dtNacimiento" required>
+                                <div class="invalid-feedback">
+                                    Ingrese una fecha válida
+                                </div>
+                            </div>
+                            <div class="form-group col-12 col-md">                                
+                                <label for="slcDepartamento">Departamento:</label>
+                                <select class="form-control" name="departamento" id="slcDepartamento" onchange="municipiosLoad()" required>
+                                    <option value="" selected="selected">--Seleccione una opción--</option>
+                                    <c:if test="${listadoDepartamentos.rowCount>0}">
+                                        <c:forEach var="departamento" items="${listadoDepartamentos.rows}">
+                                            <option value="${departamento.id_departamento}">${departamento.nombre}</option>
+                                        </c:forEach>
+                                    </c:if>
+                                </select>
+                            </div>
+                            <input type="hidden" name="msel" id="msel"/>
                             <div class="form-group col-12 col-md">
-                                <label for="apellidomaterno">Apellido materno:</label>
-                                <input type="text" class="form-control" name="apellidoM" id="apellidomaterno" placeholder="Alguien..." required>
+                                <input type="hidden" name="munsel" id="munsel">
+                                <label for="slcMunicipio">Municipio:</label>
+                                <select class="form-control" name="municipio" id="slcMunicipio"  required>
+                                    <option value="" selected="selected">--Seleccione una opción--</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-12">
+                                <label for="txtdireccion">Dirección:</label>
+                                <input type="text" class="form-control" name="direccion" id="txtdireccion" placeholder="Un lugar..." required> 
                                 <div class="invalid-feedback">
-                                    Ingrese un apellido válido
+                                    Ingrese una dirección
                                 </div>
                             </div>
-                        </div> 
+                            <div class="modal-footer col-12">
+                                <button type="submit" class="btn btn-block btn-primary" id="btnsubmit">Agregar</button>
+                            </div>
+                        </form>
                     </div>
-                    <div class="w-100"></div>
-                    <div class="form-group col-12 col-md-4 col-lg-4">
-                        <label for="slcSexo">Sexo:</label>
-                        <select class="form-control" name="s" id="slcSexo">
-                            <option value="M">Masculino</option>
-                            <option value="F">Femenino</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-12 col-md-8 col-lg-8">
-                        <label for="dtNacimiento">Fecha de nacimiento:</label>
-                        <input type="date" class="form-control" name="fechaNac" id="dtNacimiento" required>
-                        <div class="invalid-feedback">
-                            Ingrese una fecha válida
+                    <div class="tab-pane fade" id="asignaciones" role="tabpanel" aria-labelledby="profile-tab">
+                        <form class="row pt-3" id="dalert" name="dalert"></form>
+                        <p>
+                            <a class="btn btn-primary" id="linkAgregarAsignaciones" data-toggle="collapse" href="#Asignaciones" role="button" 
+                               aria-expanded="false" aria-controls="formAsignaciones">
+                                Agregar Asignaciones <i id="iconDesplegar" class="fas fa-chevron-circle-down"></i>
+                            </a>
+                        </p>
+                        <!-- formulario para agregar asignaciones -->
+                        <div class="row">
+                            <div class="col">
+                                <div class="collapse pb-3" id="Asignaciones">
+                                    <form class="card card-body needs-validation" id="frmAsignaciones" novalidate>
+                                        <input id="inpProfesores" type="hidden" name="profesor">
+                                        <div class="row">
+                                            <div class="form-group col-12 col-md-6">
+                                                <label for="slcMateria">Materia</label>
+                                                <select class="form-control" id="slcMateria" name="materia" onchange="gradosLoad()" required>
+                                                    <option value="">--Seleccione una opción--</option>
+                                                    <c:choose>
+                                                        <c:when test="${listadoMaterias.rowCount gt 0}">
+                                                            <c:forEach var="materia" items="${listadoMaterias.rows}">
+                                                                <option value="${materia.cod_materia}">${materia.nombre}</option>
+                                                            </c:forEach>
+                                                        </c:when>
+                                                    </c:choose>
+                                                </select>
+                                                <div class="invalid-feedback">
+                                                    Ingrese una materia
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-12 col-md-6">
+                                                <label for="slcGrado">Grado</label>
+                                                <select class="form-control" id="slcGrado" name="grado" required>
+                                                </select>
+                                                <div class="invalid-feedback">
+                                                    Ingrese un grado
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <input type="button" class="btn btn-success btn-block" value="Agregar" onclick="addAsignation()">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
+                        <!-- listado de asignaciones -->
+                        <h3 class="text-center">Listado de Asignaciones</h3>
+                        <form class="accordion" name="accordionMaterias" id="accordionMaterias">
+                        </form>
                     </div>
-                    <div class="form-group col-12 col-md">                                
-                        <label for="slcDepartamento">Departamento:</label>
-                        <select class="form-control" name="departamento" id="slcDepartamento" onchange="municipiosLoad()" required>
-                            <option value="" selected="selected">--Seleccione una opción--</option>
-                            <c:if test="${listadoDepartamentos.rowCount>0}">
-                                <c:forEach var="departamento" items="${listadoDepartamentos.rows}">
-                                    <option value="${departamento.id_departamento}">${departamento.nombre}</option>
-                                </c:forEach>
-                            </c:if>
-                        </select>
-                    </div>
-                    <input type="hidden" name="msel" id="msel"/>
-                    <div class="form-group col-12 col-md">
-                        <input type="hidden" name="munsel" id="munsel">
-                        <label for="slcMunicipio">Municipio:</label>
-                        <select class="form-control" name="municipio" id="slcMunicipio"  required>
-                            <option value="" selected="selected">--Seleccione una opción--</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-12">
-                        <label for="txtdireccion">Dirección:</label>
-                        <input type="text" class="form-control" name="direccion" id="txtdireccion" placeholder="Un lugar..." required> 
-                        <div class="invalid-feedback">
-                            Ingrese una dirección
-                        </div>
-                    </div>
-                    <div class="modal-footer col-12">
-                        <button type="submit" class="btn btn-block btn-primary" id="btnsubmit">Agregar</button>
-                    </div>
-                </form>
+                </div>
+
             </div>
         </div>
     </div>| 
@@ -253,6 +325,24 @@
         $("#cmbIndicator").val("1");
         $.post("../actions/comboList.jsp", $("#formProfesor").serialize(), function (data) {
             $("#slcMunicipio").html(data);
+        });
+    }
+
+    function gradosLoad() {
+        $.post("../actions/cmbListGrado.jsp", $("#frmAsignaciones").serialize(), function (data) {
+            $("#slcGrado").html(data);
+        });
+    }
+
+    function listadosAsignacionesLoad() {
+        $.post("actions/listarAsignaciones.jsp", $("#frmAsignaciones").serialize(), function (data) {
+            $("#accordionMaterias").html(data);
+        });
+    }
+    
+    function addAsignation() {
+        $.post("actions/agregarAsignacion.jsp", $("#frmAsignaciones").serialize(), function (data) {
+            $("#dalert").html(data);
         });
     }
 </script>

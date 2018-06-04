@@ -30,6 +30,7 @@
     </sql:query>
 </sql:transaction>
 
+<c:set var="target" value="profesores"/>
 <%@include file="../WEB-INF/jspf/header.jspf" %>
 <script src="js/profesor.js"></script>
 <section class="container py-4">

@@ -24,6 +24,8 @@
         FROM departamento
     </sql:query>
 </sql:transaction>
+        
+<c:set var="target" value="administration"/>
 <%@include file="../../WEB-INF/jspf/header.jspf" %>
 <script src="js/alumnosadmin.js"></script>
 <section class="container">
